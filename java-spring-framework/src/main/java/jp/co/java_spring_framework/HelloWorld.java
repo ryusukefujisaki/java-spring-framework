@@ -1,9 +1,0 @@
-package jp.co.java_spring_framework;
-
-public class HelloWorld {
-
-	public static void main(String[] args) {
-		System.out.println("Hello World");
-	}
-
-}
