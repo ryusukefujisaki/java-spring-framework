@@ -1,9 +1,6 @@
-FROM openjdk:21-bullseye
+FROM tomcat:10.1.8-jre17
 
-ARG APP_ROOT
+COPY ./java-spring-framework/target/java-spring-framework-0.0.1-SNAPSHOT.war \
+     /usr/local/tomcat/webapps/java-spring-framework.war
 
-COPY . $APP_ROOT
-
-WORKDIR $APP_ROOT
-
-# CMD ["java", "-jar", "java-spring-framework/target/java-spring-framework-0.0.1-SNAPSHOT.jar"]
+CMD ["catalina.sh", "run"]
