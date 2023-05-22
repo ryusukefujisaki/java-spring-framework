@@ -20,4 +20,15 @@
 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp"/>
 	</mvc:view-resolvers>
+
+	<context:property-placeholder location="classpath*:property/*.properties"/>
+
+	<bean id="flywayConfig" class="org.flywaydb.core.api.configuration.ClassicConfiguration">
+		<property name="url" value="${flyway.url}"/>
+		<property name="user" value="${flyway.user}"/>
+		<property name="password" value="${flyway.password}"/>
+	</bean>
+	<bean id="flyway" class="org.flywaydb.core.Flyway" init-method="migrate">
+		<constructor-arg ref="flywayConfig"/>
+	</bean>
 </beans>
