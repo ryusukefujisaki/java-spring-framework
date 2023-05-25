@@ -21,6 +21,8 @@
 		<mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp"/>
 	</mvc:view-resolvers>
 
+	<mvc:resources location="/WEB-INF/resources/" mapping="/**"></mvc:resources>
+
 	<context:property-placeholder location="classpath*:property/*.properties"/>
 
 	<bean id="flywayConfig" class="org.flywaydb.core.api.configuration.ClassicConfiguration">
