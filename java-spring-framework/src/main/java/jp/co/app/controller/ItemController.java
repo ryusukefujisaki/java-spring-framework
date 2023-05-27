@@ -10,14 +10,14 @@ import jp.co.app.repository.ItemRepository;
 
 @Controller
 public class ItemController {
-	@Autowired
-	private ItemRepository itemRepository;
+    @Autowired
+    private ItemRepository itemRepository;
 
-	@GetMapping("/items")
-	public String index(Model model) {
-		List<Item> items = itemRepository.findAll();
-		model.addAttribute("items", items);
+    @GetMapping("/items")
+    public String index(Model model) {
+        List<Item> items = itemRepository.findAll();
+        model.addAttribute("items", items);
 
-		return "item/index";
-	}
+        return "item/index";
+    }
 }
