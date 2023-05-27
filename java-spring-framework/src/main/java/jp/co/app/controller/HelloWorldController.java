@@ -1,4 +1,4 @@
-package jp.co.app;
+package jp.co.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
