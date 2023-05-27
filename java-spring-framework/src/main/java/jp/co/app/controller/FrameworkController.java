@@ -1,12 +1,12 @@
-package jp.co.app;
+package jp.co.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HelloWorldController {
-	@GetMapping("/")
+public class FrameworkController {
+	@GetMapping("/framework")
 	public String index() {
-		return "helloWorld";
+		return "framework";
 	}
 }
