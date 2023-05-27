@@ -4,5 +4,5 @@ import java.util.List;
 import jp.co.app.model.Item;
 
 public interface ItemRepository {
-	public List<Item> findAll();
+    public List<Item> findAll();
 }
