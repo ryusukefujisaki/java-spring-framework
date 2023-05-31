@@ -25,4 +25,12 @@ public class ItemRepositoryImpl implements ItemRepository {
             }
         );
     }
+
+    @Override
+    public void create(String name) {
+        jdbcTemplate.update(
+            "INSERT INTO items (name, created_at, updated_at) values (?, now(), now())",
+            name
+        );
+    }
 }
