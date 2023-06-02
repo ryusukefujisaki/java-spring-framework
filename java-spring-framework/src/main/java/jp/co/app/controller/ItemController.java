@@ -20,13 +20,13 @@ public class ItemController {
         List<Item> items = itemRepository.findAll();
         model.addAttribute("items", items);
 
-        return "item/index";
+        return "items/index";
     }
 
     @GetMapping("/items/make")
     public String make(Model model) {
         model.addAttribute(new ItemForm());
-        return "item/make";
+        return "items/make";
     }
 
     // TODO: validation (use BingingResult)
