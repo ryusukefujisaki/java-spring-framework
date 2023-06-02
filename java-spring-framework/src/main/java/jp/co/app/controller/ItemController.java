@@ -23,6 +23,12 @@ public class ItemController {
         return "item/index";
     }
 
+    @GetMapping("/items/make")
+    public String make(Model model) {
+        model.addAttribute(new ItemForm());
+        return "item/make";
+    }
+
     // TODO: validation (use BingingResult)
     // TODO: flash (use RedirectAttributes)
     @PostMapping("/items")
