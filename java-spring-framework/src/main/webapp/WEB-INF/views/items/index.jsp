@@ -7,6 +7,11 @@
   </head>
   <body>
     <h2>Item Index</h2>
+    <c:if test="${message != null}">
+      <p>
+        <font color="green"><c:out value="${message}"></c:out></font>
+      </p>
+    </c:if>
     <table>
       <thead>
         <tr>

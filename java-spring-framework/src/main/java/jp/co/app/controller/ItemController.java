@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jp.co.app.form.ItemForm;
 import jp.co.app.model.Item;
 import jp.co.app.repository.ItemRepository;
@@ -31,14 +32,18 @@ public class ItemController {
         return "items/make";
     }
 
-    // TODO: flash (use RedirectAttributes)
     @PostMapping("/items")
-    public String create(@Validated ItemForm itemForm, BindingResult bindingResult) {
+    public String create(
+        @Validated ItemForm itemForm,
+        BindingResult bindingResult,
+        RedirectAttributes redirectAttributes
+    ) {
         if (bindingResult.hasErrors()) {
             return "items/make";
         }
 
         itemRepository.create(itemForm.getName());
+        redirectAttributes.addFlashAttribute("message", "Item was successfully created.");
         return "redirect:/items";
     }
 }
