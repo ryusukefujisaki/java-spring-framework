@@ -26,23 +26,23 @@ public class ItemController {
         return "items/index";
     }
 
-    @GetMapping("/items/make")
-    public String make(Model model) {
+    @GetMapping("/items/create")
+    public String create(Model model) {
         model.addAttribute(new ItemForm());
-        return "items/make";
+        return "items/create";
     }
 
     @PostMapping("/items")
-    public String create(
+    public String store(
         @Validated ItemForm itemForm,
         BindingResult bindingResult,
         RedirectAttributes redirectAttributes
     ) {
         if (bindingResult.hasErrors()) {
-            return "items/make";
+            return "items/create";
         }
 
-        itemRepository.create(itemForm.getName());
+        itemRepository.store(itemForm.getName());
         redirectAttributes.addFlashAttribute("message", "Item was successfully created.");
         return "redirect:/items";
     }

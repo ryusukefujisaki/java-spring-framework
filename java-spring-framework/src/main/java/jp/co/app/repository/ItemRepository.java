@@ -6,5 +6,5 @@ import jp.co.app.model.Item;
 public interface ItemRepository {
     public List<Item> findAll();
 
-    public void create(String name);
+    public void store(String name);
 }

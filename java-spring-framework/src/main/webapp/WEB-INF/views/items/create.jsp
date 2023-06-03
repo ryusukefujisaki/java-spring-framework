@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Item Make</title>
+    <title>Item Create</title>
   </head>
   <body>
-    <h2>Item Make</h2>
+    <h2>Item Create</h2>
     <form:form action="/java-spring-framework/items" method="post" modelAttribute="itemForm">
       <form:label path="name">Name:</form:label>
       <form:input path="name" />
