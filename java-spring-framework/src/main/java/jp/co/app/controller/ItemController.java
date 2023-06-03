@@ -4,7 +4,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import jp.co.app.form.ItemForm;
 import jp.co.app.model.Item;
 import jp.co.app.repository.ItemRepository;
 
@@ -18,6 +23,27 @@ public class ItemController {
         List<Item> items = itemRepository.findAll();
         model.addAttribute("items", items);
 
-        return "item/index";
+        return "items/index";
+    }
+
+    @GetMapping("/items/create")
+    public String create(Model model) {
+        model.addAttribute(new ItemForm());
+        return "items/create";
+    }
+
+    @PostMapping("/items")
+    public String store(
+        @Validated ItemForm itemForm,
+        BindingResult bindingResult,
+        RedirectAttributes redirectAttributes
+    ) {
+        if (bindingResult.hasErrors()) {
+            return "items/create";
+        }
+
+        itemRepository.store(itemForm.getName());
+        redirectAttributes.addFlashAttribute("message", "Item was successfully created.");
+        return "redirect:/items";
     }
 }
