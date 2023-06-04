@@ -4,6 +4,7 @@
 <html>
   <head>
     <title>Item Index</title>
+    <script src="/java-spring-framework/jquery/jquery.min.js"></script>
   </head>
   <body>
     <h2>Item Index</h2>
