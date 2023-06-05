@@ -6,7 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jp.co.app.form.ItemForm;
@@ -44,6 +46,16 @@ public class ItemController {
 
         itemRepository.store(itemForm.getName());
         redirectAttributes.addFlashAttribute("message", "Item was successfully created.");
+        return "redirect:/items";
+    }
+
+    @DeleteMapping("/items/{id}")
+    public String delete(
+        @PathVariable("id") Integer id,
+        RedirectAttributes redirectAttributes
+    ) {
+        itemRepository.delete(id);
+        redirectAttributes.addFlashAttribute("message", "Item was successfully deleted.");
         return "redirect:/items";
     }
 }
