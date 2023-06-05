@@ -5,6 +5,13 @@
   <head>
     <title>Item Index</title>
     <script src="/java-spring-framework/jquery/jquery.min.js"></script>
+    <script>
+    $(function () {
+      $('[id^=delete-item]').on('click', function () {
+        console.log($(this).data('delete-item-id'));
+      });
+    });
+    </script>
   </head>
   <body>
     <h2>Item Index</h2>
@@ -20,6 +27,7 @@
           <th>name</th>
           <th>created_at</th>
           <th>updated_at</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +37,15 @@
             <td><c:out value="${item.getName()}" /></td>
             <td><c:out value="${item.getCreatedAt()}" /></td>
             <td><c:out value="${item.getUpdatedAt()}" /></td>
+            <td>
+              <button
+                id="delete-item-${item.getId()}"
+                type="button"
+                data-delete-item-id="${item.getId()}"
+              >
+                Delete
+              </button>
+            </td>
           </tr>
         </c:forEach>
       </tbody>
