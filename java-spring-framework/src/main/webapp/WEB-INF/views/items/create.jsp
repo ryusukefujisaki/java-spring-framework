@@ -11,7 +11,7 @@
       <form:label path="name">Name:</form:label>
       <form:input path="name" />
       <form:errors path="name" cssStyle="color: red;" />
-      <input type="submit" />
+      <input type="submit" value="Submit" />
     </form:form>
   </body>
 </html>
