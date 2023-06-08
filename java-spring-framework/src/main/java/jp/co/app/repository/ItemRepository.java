@@ -7,4 +7,6 @@ public interface ItemRepository {
     public List<Item> findAll();
 
     public void store(String name);
+
+    public void delete(Integer id);
 }
