@@ -21,9 +21,7 @@
         <mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp" />
     </mvc:view-resolvers>
 
-    <mvc:resources location="/WEB-INF/resources/,/webjars/" mapping="/**">
-        <mvc:resource-chain resource-cache="true" />
-    </mvc:resources>
+    <mvc:resources location="/WEB-INF/resources/" mapping="/**" />
 
     <context:property-placeholder location="classpath*:property/*.properties" />
 
