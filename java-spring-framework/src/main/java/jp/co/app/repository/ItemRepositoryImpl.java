@@ -27,6 +27,22 @@ public class ItemRepositoryImpl implements ItemRepository {
     }
 
     @Override
+    public Item get(Integer id) {
+        return jdbcTemplate.queryForObject(
+            "SELECT * FROM items where id = ?",
+            (resultSet, rowNum) -> {
+                Item newItem = new Item();
+                newItem.setId(resultSet.getInt("id"));
+                newItem.setName(resultSet.getString("name"));
+                newItem.setCreatedAt(resultSet.getTimestamp("created_at"));
+                newItem.setUpdatedAt(resultSet.getTimestamp("updated_at"));
+                return newItem;
+            },
+            id
+        );
+    }
+
+    @Override
     public void store(String name) {
         jdbcTemplate.update("INSERT INTO items (name, created_at, updated_at) values (?, now(), now())", name);
     }

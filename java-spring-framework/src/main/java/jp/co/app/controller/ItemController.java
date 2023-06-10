@@ -48,6 +48,17 @@ public class ItemController {
         return "redirect:/items";
     }
 
+    @GetMapping("/items/edit/{id}")
+    public String edit(
+        @PathVariable("id") Integer id,
+        Model model
+    ) {
+        Item item = itemRepository.get(id);
+        model.addAttribute(item);
+        model.addAttribute(new ItemForm());
+        return "/items/edit";
+    }
+
     @PostMapping("/items/delete/{id}")
     public String delete(
         @PathVariable("id") Integer id,
