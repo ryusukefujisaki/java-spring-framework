@@ -56,7 +56,24 @@ public class ItemController {
         Item item = itemRepository.get(id);
         model.addAttribute(item);
         model.addAttribute(new ItemForm());
-        return "/items/edit";
+        return "items/edit";
+    }
+
+    @PostMapping("/items/update/{id}")
+    public String update(
+        @PathVariable("id") Integer id,
+        @Validated ItemForm itemForm,
+        BindingResult bindingResult,
+        RedirectAttributes redirectAttributes
+    ) {
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("bindingResult", bindingResult);
+            return "redirect:/items/edit/" + id;
+        }
+
+        itemRepository.update(id, itemForm.getName());
+        redirectAttributes.addFlashAttribute("message", "Item was successfully updated.");
+        return "redirect:/items";
     }
 
     @PostMapping("/items/delete/{id}")

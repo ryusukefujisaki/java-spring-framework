@@ -10,5 +10,7 @@ public interface ItemRepository {
 
     public void store(String name);
 
+    public void update(Integer id, String name);
+
     public void delete(Integer id);
 }

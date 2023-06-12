@@ -20,11 +20,13 @@
       </thead>
       <tbody>
         <tr>
-          <form:form action="/java-spring-framework/items/update" method="post" modelAttribute="itemForm">
+          <form:form action="/java-spring-framework/items/update/${item.getId()}" method="post" modelAttribute="itemForm">
             <td><c:out value="${item.getId()}" /></td>
             <td>
               <form:input path="name" value="${item.getName()}" />
-              <form:errors path="name" cssStyle="color: red;" />
+              <c:if test="${bindingResult != null && bindingResult.getFieldError(\"name\") != null}">
+                <font color="red"><c:out value="${bindingResult.getFieldError(\"name\").getDefaultMessage()}" /></font>
+              </c:if>
             </td>
             <td><c:out value="${item.getCreatedAt()}" /></td>
             <td><c:out value="${item.getUpdatedAt()}" /></td>
