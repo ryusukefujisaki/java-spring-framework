@@ -31,7 +31,7 @@
             <td><c:out value="${item.getCreatedAt()}" /></td>
             <td><c:out value="${item.getUpdatedAt()}" /></td>
             <td>
-              <form:form action="/java-spring-framework/items/delete/${item.getId()}" method="post">
+              <form:form action="/java-spring-framework/items/${item.getId()}/delete" method="post">
                 <input type="submit" value="Delete">
               </form:form>
             </td>

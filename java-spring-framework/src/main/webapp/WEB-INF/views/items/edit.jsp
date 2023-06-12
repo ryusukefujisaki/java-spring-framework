@@ -20,7 +20,7 @@
       </thead>
       <tbody>
         <tr>
-          <form:form action="/java-spring-framework/items/update/${item.getId()}" method="post" modelAttribute="itemForm">
+          <form:form action="/java-spring-framework/items/${item.getId()}/update" method="post" modelAttribute="itemForm">
             <td><c:out value="${item.getId()}" /></td>
             <td>
               <form:input path="name" value="${item.getName()}" />
