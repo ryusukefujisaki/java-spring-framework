@@ -48,7 +48,35 @@ public class ItemController {
         return "redirect:/items";
     }
 
-    @PostMapping("/items/delete/{id}")
+    @GetMapping("/items/{id}/edit")
+    public String edit(
+        @PathVariable("id") Integer id,
+        Model model
+    ) {
+        Item item = itemRepository.get(id);
+        model.addAttribute(item);
+        model.addAttribute(new ItemForm());
+        return "items/edit";
+    }
+
+    @PostMapping("/items/{id}/update")
+    public String update(
+        @PathVariable("id") Integer id,
+        @Validated ItemForm itemForm,
+        BindingResult bindingResult,
+        RedirectAttributes redirectAttributes
+    ) {
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("bindingResult", bindingResult);
+            return "redirect:/items/" + id + "/edit";
+        }
+
+        itemRepository.update(id, itemForm.getName());
+        redirectAttributes.addFlashAttribute("message", "Item was successfully updated.");
+        return "redirect:/items";
+    }
+
+    @PostMapping("/items/{id}/delete")
     public String delete(
         @PathVariable("id") Integer id,
         RedirectAttributes redirectAttributes

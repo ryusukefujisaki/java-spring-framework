@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -21,6 +21,7 @@
           <th>created_at</th>
           <th>updated_at</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -31,7 +32,12 @@
             <td><c:out value="${item.getCreatedAt()}" /></td>
             <td><c:out value="${item.getUpdatedAt()}" /></td>
             <td>
-              <form:form action="/java-spring-framework/items/delete/${item.getId()}" method="post">
+              <button type="button" onclick='location.href="/java-spring-framework/items/${item.getId()}/edit"'>
+                Edit
+              </button>
+            </td>
+            <td>
+              <form:form action="/java-spring-framework/items/${item.getId()}/delete" method="post">
                 <input type="submit" value="Delete">
               </form:form>
             </td>
