@@ -10,9 +10,12 @@
     <h2>Item Index</h2>
     <c:if test="${message != null}">
       <p>
-        <font color="green"><c:out value="${message}"></c:out></font>
+        <font color="green"><c:out value="${message}" /></font>
       </p>
     </c:if>
+    <button type="button" onclick='location.href="/java-spring-framework/items/create"'>
+      Create
+    </button>
     <table>
       <thead>
         <tr>
