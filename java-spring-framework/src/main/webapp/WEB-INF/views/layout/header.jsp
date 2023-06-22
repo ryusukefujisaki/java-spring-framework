@@ -1,5 +1,5 @@
-<div>
+<div style="position: fixed; top: 0; width: 99%; height: 64px;">
   <hr>
-    <span>Header</span>
+    <div style="height: 100%;">Header</div>
   <hr>
 </div>

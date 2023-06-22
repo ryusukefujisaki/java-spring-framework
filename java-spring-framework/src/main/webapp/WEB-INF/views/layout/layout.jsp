@@ -7,7 +7,7 @@
   </head>
   <body>
     <c:import url="layout/header.jsp" />
-    <div id="main">
+    <div id="main" style="margin-top: 100px;">
       ${param.content}
     </div>
     <c:import url="layout/footer.jsp" />
