@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>${param.title}</title>
+    <title>${param.title} | Java Spring Framework</title>
   </head>
   <body>
-    <c:import url="/layout/header.jsp" />
+    <c:import url="layout/header.jsp" />
     <div id="main">
       ${param.content}
     </div>
-    <c:import url="/layout/footer.jsp" />
+    <c:import url="layout/footer.jsp" />
   </body>
 </html>
