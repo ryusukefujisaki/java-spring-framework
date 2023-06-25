@@ -1,12 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Framework</title>
-  </head>
-  <body>
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/WEB-INF/views/layout/layout.jsp">
+  <c:param name="title" value="Framework" />
+  <c:param name="content">
+    <div style="display: flex; justify-content: center; align-items: center;">
       <img src="/java-spring-framework/images/og-spring.png">
     </div>
-  </body>
-</html>
+  </c:param>
+</c:import>

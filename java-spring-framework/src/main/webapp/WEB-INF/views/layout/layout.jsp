@@ -7,10 +7,10 @@
     <link rel="icon" href="/java-spring-framework/images/favicon.ico">
   </head>
   <body>
-    <c:import url="layout/header.jsp" />
+    <c:import url="/WEB-INF/views/layout/header.jsp" />
     <div id="main" style="margin-top: 100px;">
       ${param.content}
     </div>
-    <c:import url="layout/footer.jsp" />
+    <c:import url="/WEB-INF/views/layout/footer.jsp" />
   </body>
 </html>
