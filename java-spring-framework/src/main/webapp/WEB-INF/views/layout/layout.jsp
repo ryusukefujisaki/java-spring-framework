@@ -4,6 +4,7 @@
 <html>
   <head>
     <title>${param.title} | Java Spring Framework</title>
+    <link rel="icon" href="/java-spring-framework/images/favicon.ico">
   </head>
   <body>
     <c:import url="layout/header.jsp" />
