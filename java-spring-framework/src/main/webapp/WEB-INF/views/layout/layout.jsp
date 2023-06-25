@@ -9,7 +9,7 @@
   </head>
   <body>
     <c:import url="/WEB-INF/views/layout/header.jsp" />
-    <div id="main" style="margin-top: 100px;">
+    <div id="main" style="margin-top: 130px;">
       ${param.content}
     </div>
     <c:import url="/WEB-INF/views/layout/footer.jsp" />
