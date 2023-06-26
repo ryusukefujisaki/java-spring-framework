@@ -13,7 +13,7 @@
     <button type="button" onclick='location.href="/java-spring-framework/items/create"'>
       Create
     </button>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>id</th>

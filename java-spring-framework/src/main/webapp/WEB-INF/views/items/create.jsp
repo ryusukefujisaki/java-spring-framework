@@ -5,11 +5,19 @@
   <c:param name="title" value="Item Create" />
   <c:param name="content">
     <h2>Item Create</h2>
-    <form:form action="/java-spring-framework/items" method="post" modelAttribute="itemForm">
-      <form:label path="name">Name:</form:label>
-      <form:input path="name" />
-      <form:errors path="name" cssStyle="color: red;" />
-      <input type="submit" value="Submit" />
-    </form:form>
+    <table class="table">
+      <tbody>
+        <tr>
+          <form:form action="/java-spring-framework/items" method="post" modelAttribute="itemForm">
+            <td>
+              <form:label path="name">Name:</form:label>
+              <form:input path="name" />
+              <form:errors path="name" cssStyle="color: red;" />
+            </td>
+            <td><input type="submit" value="Submit" /></td>
+          </form:form>
+        </tr>
+      </tbody>
+    </table>
   </c:param>
 </c:import>

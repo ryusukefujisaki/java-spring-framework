@@ -5,7 +5,7 @@
   <c:param name="title" value="Item Edit" />
   <c:param name="content">
     <h2>Item Edit</h2>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>id</th>
