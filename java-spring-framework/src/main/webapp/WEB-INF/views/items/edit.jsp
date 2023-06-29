@@ -27,7 +27,15 @@
             </td>
             <td><c:out value="${item.getCreatedAt()}" /></td>
             <td><c:out value="${item.getUpdatedAt()}" /></td>
-            <td><input type="submit" value="Submit" /></td>
+            <td>
+              <button
+                class="btn btn-primary"
+                type="submit"
+                style="width: 160px;"
+              >
+                Submit
+              </button>
+            </td>
           </form:form>
         </tr>
       </tbody>

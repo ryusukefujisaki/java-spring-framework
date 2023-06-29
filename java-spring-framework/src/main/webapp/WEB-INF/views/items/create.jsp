@@ -14,7 +14,15 @@
               <form:input path="name" />
               <form:errors path="name" cssStyle="color: red;" />
             </td>
-            <td><input type="submit" value="Submit" /></td>
+            <td>
+              <button
+                class="btn btn-primary"
+                type="submit"
+                style="width: 160px;"
+              >
+                Submit
+              </button>
+            </td>
           </form:form>
         </tr>
       </tbody>
