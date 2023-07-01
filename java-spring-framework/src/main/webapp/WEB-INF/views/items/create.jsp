@@ -6,10 +6,18 @@
   <c:param name="content">
     <h2>Item Create</h2>
     <form:form action="/java-spring-framework/items" method="post" modelAttribute="itemForm">
-      <form:label path="name">Name:</form:label>
-      <form:input path="name" />
-      <form:errors path="name" cssStyle="color: red;" />
-      <input type="submit" value="Submit" />
+      <div class="form-group" style="margin-bottom: 1rem;">
+        <form:label path="name">name</form:label>
+        <form:input path="name" class="form-control" />
+        <form:errors path="name" cssStyle="color: red;" />
+      </div>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        style="width: 160px;"
+      >
+        Submit
+      </button>
     </form:form>
   </c:param>
 </c:import>
