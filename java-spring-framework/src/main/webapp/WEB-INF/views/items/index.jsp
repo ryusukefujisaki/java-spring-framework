@@ -51,6 +51,7 @@
                 <button
                   class="btn btn-outline-danger"
                   type="submit"
+                  onclick='return confirm("confirmation");'
                   style="width: 160px;"
                 >
                   Delete
