@@ -13,6 +13,7 @@
           <th>created_at</th>
           <th>updated_at</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -34,6 +35,16 @@
                 style="width: 160px;"
               >
                 Submit
+              </button>
+            </td>
+            <td>
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                onclick='location.href="/java-spring-framework/items";'
+                style="width: 160px;"
+              >
+                Back
               </button>
             </td>
           </form:form>

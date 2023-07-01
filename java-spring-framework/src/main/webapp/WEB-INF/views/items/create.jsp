@@ -18,6 +18,14 @@
       >
         Submit
       </button>
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        onclick='location.href="/java-spring-framework/items";'
+        style="width: 160px; margin-left: 1rem;"
+      >
+        Back
+      </button>
     </form:form>
   </c:param>
 </c:import>
