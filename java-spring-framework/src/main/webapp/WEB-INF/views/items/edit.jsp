@@ -5,7 +5,7 @@
   <c:param name="title" value="Item Edit" />
   <c:param name="content">
     <h2>Item Edit</h2>
-    <table class="table">
+    <table class="table" style="table-layout: fixed;">
       <thead>
         <tr>
           <th>id</th>
@@ -16,11 +16,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr style="vertical-align: middle;">
           <form:form action="/java-spring-framework/items/${item.getId()}/update" method="post" modelAttribute="itemForm">
             <td><c:out value="${item.getId()}" /></td>
             <td>
-              <form:input path="name" value="${item.getName()}" />
+              <form:input path="name" class="form-control" value="${item.getName()}" />
               <c:if test="${bindingResult != null && bindingResult.getFieldError(\"name\") != null}">
                 <font color="red"><c:out value="${bindingResult.getFieldError(\"name\").getDefaultMessage()}" /></font>
               </c:if>

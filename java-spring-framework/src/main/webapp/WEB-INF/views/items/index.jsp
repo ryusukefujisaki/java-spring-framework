@@ -14,11 +14,11 @@
       class="btn btn-outline-primary"
       type="button"
       onclick='location.href="/java-spring-framework/items/create"'
-      style="width: 160px;"
+      style="width: 160px; margin: 1rem auto;"
     >
       Create
     </button>
-    <table class="table">
+    <table class="table" style="table-layout: fixed;">
       <thead>
         <tr>
           <th>id</th>
@@ -31,7 +31,7 @@
       </thead>
       <tbody>
         <c:forEach var="item" items="${items}">
-          <tr>
+          <tr style="vertical-align: middle;">
             <td><c:out value="${item.getId()}" /></td>
             <td><c:out value="${item.getName()}" /></td>
             <td><c:out value="${item.getCreatedAt()}" /></td>
