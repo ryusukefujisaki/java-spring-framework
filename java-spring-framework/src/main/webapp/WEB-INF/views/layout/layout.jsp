@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="/java-spring-framework/bootstrap/css/bootstrap.min.css">
   </head>
   <body>
-    <c:import url="/WEB-INF/views/layout/header.jsp" />
-    <div id="main" style="width: 90%; margin: 130px auto;">
-      ${param.content}
+    <div class="row g-0">
+      <div class="col-2" style="position: fixed; height: 100%;">
+        <c:import url="/WEB-INF/views/layout/sidebar.jsp" />
+      </div>
+      <div class="col-10" style="position: absolute; right: 0;">
+        <c:import url="/WEB-INF/views/layout/header.jsp" />
+        <div id="main" style="width: 90%; margin: 130px auto;">
+          ${param.content}
+        </div>
+        <c:import url="/WEB-INF/views/layout/footer.jsp" />
+      </div>
     </div>
-    <c:import url="/WEB-INF/views/layout/footer.jsp" />
+    <script src="/java-spring-framework/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
